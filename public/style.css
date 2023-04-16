@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Philosopher', sans-serif;
+}
+.main{
+    background-image: url(img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 150rem;
+    
+}
+.mainContainer{
+    position: relative;
+    display: flex;
+    width: 70%;
+    background-image: url(img.jpg);
+    background-position: center;
+    background-size: cover;
+    gap: 5rem;
+    box-shadow: 0 2rem 4rem #48cae44f;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    font-size: 2rem;
+    width: 60%;
+    padding: 2rem 0 2rem 2rem;
+    text-align: center;
+}
+.heading{
+    font-size: 6rem;
+    margin-top: 5rem;
+    width: 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip : text;
+    background-image: linear-gradient(to right, #caf0f8,#90e0ef,#48cae4);
+    display: flex;
+    justify-content: center;
+}
+
+.spanHeading{
+    height: fit-content;
+    width: max-content;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+hr{
+    width: 0%;
+    border: none;
+    border-bottom: .21rem solid #dae3e5;
+    border-radius: 1rem;
+    visibility: hidden;
+}
+
+/* ------- UNDER LINE(Class) -------- */
+.border{
+    width: 100%;
+    visibility: visible;
+    outline: none;
+    border-bottom: .21rem solid #dae3e5;
+    animation-name: border;
+    animation-duration: 1.5s;
+    animation-fill-mode:backwards;
+    animation-iteration-count: 1;
+    transition: all 1s 1s;
+}
+
+@keyframes border {
+    0%{
+
+        width: 0%;
+        visibility: visible;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+
+.tegline{
+    text-align: start;
+    color: #dae3e5;
+}
+.contentBtn{
+    width: 9rem;
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem;
+    align-items: start;
+    font-family: 'Philosopher', sans-serif;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.contentBtn:hover{
+    background-color: #48cae4;
+}
+
+.form__container{
+    position: relative;
+    width: 40%;
+}
+
+.form,
+.loginForm{
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 2s;
+}
+
+.form{
+    backface-visibility: hidden;
+}
+
+.loginForm{
+    transform: rotatey(180deg);
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    z-index: -1;
+    backface-visibility: hidden;
+
+}
+.formHeading{
+    margin-top: 2rem;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to right, #caf0f8,#90e0ef,#48cae4);
+    font-size: 4rem;
+
+}
+.formLabels{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.labelAndInputes{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.radioInput{
+    display: flex;
+    padding-left: 2rem;
+    gap: 1rem;
+    color: #dae3e5;
+    
+}
+#radio{
+    accent-color: #48cae4;
+}
+.labels{
+    margin-left: .5rem;
+    color: #dae3e5;
+
+}
+.inputs{
+    margin: .8rem 0 .8rem 0;
+    border: none;
+    padding: .5rem 0 .5rem 0;
+    padding-left: 1rem;
+    border: none;
+    border-radius: .4rem;
+    outline: none;
+    background-color: #caf0f8;
+    color: #061930;
+
+}
+.formBtn{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;    
+}
+.inpBtn{
+    width: 8rem;
+    padding: .6rem;
+    border: none;
+    border-radius: .5rem;
+    font-family: 'Philosopher', sans-serif;
+    transition: .3s all ease-in-out;
+    background-color: #caf0f8;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.inpBtn:hover{
+    cursor: pointer;
+    background-color: #48cae4;
+}
+.icons{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.ion{
+    color: #48cae4;
+    width: 3rem;
+    height: 3rem;
+}
+.ion:hover{
+    color: #caf0f8;
+}
+
+.forgetPass{
+    text-align: end;
+    top: 0;
+    padding: 0 2rem 2rem 0;
+    font-size: 1.5rem;
+}
+.link:visited,.link:active{
+    color: #48cae4;
+}
+.link:hover{
+    color: #caf0f8;
+}
+
+
+/* --------- MEDIA QURIES ------------- */
+
+@media (max-width: 46.875em){
+    .content{
+        display: none;
+    }
+    .form__container{
+        width: 100%;
+    }
+}
