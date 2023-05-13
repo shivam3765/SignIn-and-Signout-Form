@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -22,10 +23,6 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/home", (req, res) => {
-    res.render("home")
-});
-
 app.post("/registration", async (req, res) => {
     try {
 
@@ -47,20 +44,22 @@ app.post("/registration", async (req, res) => {
 
 });
 
-app.post("/home", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
-        const checkEmail = await collection.findOne({ Email: req.body.Email })
-        const checkPass = await collection.findOne({ Password: req.body.Password })
+        const email = req.body.loginEmail;
+        const password = req.body.loginPassword;
+
+        const checkEmail = await collection.findOne({ Email:email})
         
-        if (checkEmail.Email === req.body.Email && checkPass.Password === req.body.Password) {
-            res.render("home")
+        if (checkEmail.Password === password) {
+            res.send("Welcome to my website...")
         }
         else {
-            res.send("wrong password")
+            res.send("invalid id password")
         }
     }
-    catch {
-        alart(res.send("wrong details"))
+    catch(error) {
+        res.status(400).send("wrong details")
     }
 });
 

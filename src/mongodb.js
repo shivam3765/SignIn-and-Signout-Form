@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/RegistrationForm")
+
+const databaseStr = process.env.DATABASECONNECTIVITY;
+
+mongoose.connect(databaseStr)
     .then(() => {
         console.log("successfull connected");
     })
@@ -37,4 +40,4 @@ const Registration = new mongoose.Schema({
     
 const collection = new mongoose.model("Collections", Registration)
 
-module.exports = collection
+module.exports = collection;
